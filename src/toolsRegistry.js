@@ -1,4 +1,4 @@
-import SessionTime from "./pages/tools/SessionTime.jsx";
+import SessionTime from "./pages/tools/SessionTime";
 
 // To add a new tool:
 // 1. Create src/pages/tools/YourTool.jsx (default export a component)
