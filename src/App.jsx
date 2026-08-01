@@ -1,4 +1,4 @@
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import { tools } from './toolsRegistry.js'
 
@@ -14,11 +14,6 @@ function ToolFrame({ children, name }) {
       <div className="tool-frame__body">{children}</div>
     </div>
   )
-}
-
-function RouteLabel() {
-  const { pathname } = useLocation()
-  return <code className="route-chip">/my-tools{pathname}</code>
 }
 
 export default function App() {
@@ -50,9 +45,6 @@ export default function App() {
           }
         />
       </Routes>
-      <div className="route-chip-dock">
-        <RouteLabel />
-      </div>
     </div>
   )
 }
