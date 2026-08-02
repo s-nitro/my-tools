@@ -1,6 +1,6 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import { tools } from './toolsRegistry.js'
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import { tools } from "./toolsRegistry.js";
 
 function ToolFrame({ children, name }) {
   return (
@@ -13,7 +13,7 @@ function ToolFrame({ children, name }) {
       </header>
       <div className="tool-frame__body">{children}</div>
     </div>
-  )
+  );
 }
 
 export default function App() {
@@ -21,10 +21,10 @@ export default function App() {
     <div className="shell">
       <Routes>
         <Route path="/" element={<Home />} />
-        {tools.map(({ path, name, component: Tool }) => (
+        {tools.map(({ path, routePath, name, component: Tool }) => (
           <Route
             key={path}
-            path={`/${path}`}
+            path={`/${routePath || path}`}
             element={
               <ToolFrame name={name}>
                 <Tool />
@@ -46,5 +46,5 @@ export default function App() {
         />
       </Routes>
     </div>
-  )
+  );
 }
