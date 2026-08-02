@@ -408,13 +408,8 @@ textarea {
 .shopping {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.shopping__add-row {
-  display: flex;
-  gap: 0.5rem;
+  height: min(75vh);
+  overflow: hidden;
 }
 
 .shopping__input {
@@ -570,4 +565,30 @@ textarea {
   font-size: 0.85rem;
   max-width: 32ch;
   margin: 0 auto;
+}
+
+.shopping__list-area {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.25rem;
+}
+
+.shopping__empty {
+  margin: auto;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.shopping__add-row {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.9rem 0 0;
+  margin-top: 0.75rem;
+  flex-shrink: 0;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
 }
